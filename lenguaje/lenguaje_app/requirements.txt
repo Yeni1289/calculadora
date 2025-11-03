@@ -1,3 +1,5 @@
 Django
 gunicorn
 antlr4-python3-runtime
+dj-database-url
+

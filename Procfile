@@ -1,1 +1,1 @@
-web: gunicorn lenguaje.lenguaje.wsgi:application
+web: gunicorn lenguaje.wsgi

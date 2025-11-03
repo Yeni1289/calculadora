@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: calculadora
+    env: python
+    buildCommand: "pip install -r lenguaje/requirements.txt && python lenguaje/manage.py collectstatic --noinput"
+    startCommand: "gunicorn lenguaje.lenguaje.wsgi:application"

@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure-mtc_-@6v7e()$ad4g43fi9m+t*uz*t4!z$&dcw_au&1l0v(=@4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*'] 
-
+ALLOWED_HOSTS = ['calculadora-ptrn.onrender.com', 'localhost']
 
 # Application definition
 

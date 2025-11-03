@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-mtc_-@6v7e()$a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['calculadora-ptrn.onrender.com', 'localhost']
+ALLOWED_HOSTS = ['calculadora-ptrn.onrender.com', '127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -42,8 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #'sslserver',
-    #'lenguaje_app',  
-    'calculadora',
+    #'lenguaje_app',
+    #'calculadora',
+    'calculadora_app',
 ]
 
 
@@ -57,13 +58,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'lenguaje.urls'
+ROOT_URLCONF = 'calculadora.urls'
+
 
 # ...existing code...
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],  # opcional si tus plantillas están dentro de cada app
+        'DIRS': [BASE_DIR / 'templates'],  # opcional si tus plantillas están dentro de cada app
         'APP_DIRS': True,
         'OPTIONS': {
          'context_processors': [
@@ -87,7 +89,8 @@ TEMPLATES = [
 
 
 
-WSGI_APPLICATION = 'lenguaje.wsgi.application'
+WSGI_APPLICATION = 'calculadora.wsgi.application'
+
 
 
 # Database

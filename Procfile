@@ -1,1 +1,1 @@
-web: gunicorn lenguaje.lenguaje.wsgi
+web: gunicorn calculadora.calculadora.wsgi

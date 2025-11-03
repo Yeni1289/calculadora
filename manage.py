@@ -4,7 +4,9 @@ import os
 import sys
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'lenguaje.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'calculadora.settings')
+
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -15,3 +17,11 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+#python manage.py runserver
+
+#x = 5;
+#y = 3;
+#if (x > y) {
+    #z = x + y;
+#}

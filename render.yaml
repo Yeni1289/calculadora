@@ -4,6 +4,6 @@ services:
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn lenguaje.wsgi:application
+    startCommand: gunicorn calculadora.wsgi:application
     pythonVersion: 3.13
 

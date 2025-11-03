@@ -16,16 +16,18 @@ import sys
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-mtc_-@6v7e()$ad4g43fi9m+t*uz*t4!z$&dcw_au&1l0v(=@4'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-mtc_-@6v7e()$ad4g43fi9m+t*uz*t4!z$&dcw_au&1l0v(=@4')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['calculadora-ptrn.onrender.com', 'localhost']
 
@@ -64,16 +66,18 @@ TEMPLATES = [
         'DIRS': [],  # opcional si tus plantillas están dentro de cada app
         'APP_DIRS': True,
         'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.template.context_processors.csrf',
-                'django.template.context_processors.tz',
-                'django.template.context_processors.static',
-                'django.template.context_processors.i18n',
-                'django.contrib.messages.context_processors.messages',
-            ],
+         'context_processors': [
+             'django.template.context_processors.debug',
+             'django.template.context_processors.request',
+             'django.contrib.auth.context_processors.auth',
+             'django.contrib.messages.context_processors.messages',
+             'django.template.context_processors.i18n',
+             'django.template.context_processors.static',
+             'django.template.context_processors.media',
+             'django.template.context_processors.tz',
+          ]
+   
+            
         },
     },
 ]
@@ -93,9 +97,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / "db.sqlite3",
-        'default': dj_database_url.config(default='sqlite:///db.sqlite3')
     }
 }
+
+
 
 
 # Password validation

@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #'sslserver',
-    #'lenguaje_app',  # <-- agregar la app aquí
+    'lenguaje_app',  # <-- agregar la app aquí
     'calculadora',
 ]
 

@@ -2,5 +2,8 @@ services:
   - type: web
     name: calculadora
     env: python
-    buildCommand: "pip install -r lenguaje/requirements.txt && python lenguaje/manage.py collectstatic --noinput"
-    startCommand: "gunicorn lenguaje.lenguaje.wsgi:application"
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python lenguaje/manage.py runserver 0.0.0.0:10000"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11

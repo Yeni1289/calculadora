@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'sslserver',
+    #'sslserver',
     'lenguaje_app',  # <-- agregar la app aquí
 ]
 
